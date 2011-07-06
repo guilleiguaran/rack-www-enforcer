@@ -1,10 +1,8 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "rack/www-enforcer/version"
 
 Gem::Specification.new do |s|
   s.name        = "rack-www-enforcer"
-  s.version     = Rack::WwwEnforcer::VERSION
+  s.version     = "0.0.1"
   s.authors     = ["Guillermo Iguaran"]
   s.email       = ["guilleiguaran@gmail.com"]
   s.homepage    = "https://github.com/guilleiguaran/rack-www-enforcer"
