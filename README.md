@@ -7,3 +7,5 @@ Usage
 -------
 
     use Rack::WwwRedirect, :subdomain => "app"
+
+If subdomain isn't present "www" is used by default
