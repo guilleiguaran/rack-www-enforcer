@@ -1,7 +1,7 @@
 Rack::WwwEnforcer
 =================
 
-Rack Middleware for redirect requests to an specific subdomain of your app. (Ex. http://mysite.com to https://app.mysite.com)
+Rack Middleware for redirect requests to an specific subdomain of your app. (Ex. http://mysite.com to http://app.mysite.com)
 
 Usage
 -------
