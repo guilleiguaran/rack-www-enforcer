@@ -7,6 +7,7 @@ module Rack
     def initialize(app, options = {})
       @app = app
       @subdomain = options[:subdomain] || "www"
+      @replace_subdomain = options[:replace_subdomain]
     end
 
     def call(env)
@@ -27,7 +28,11 @@ module Rack
 
     def redirect_to_subdomain(req)
       url       = URI(req.url)
-      url.host  = "#{@subdomain}.#{url.host}"
+      unless @replace_subdomain
+        url.host  = "#{@subdomain}.#{url.host}"
+      else
+        url.host = url.host.gsub(/^([^.]+)(\..*)$/, "#{@subdomain}#{'\2'}")
+      end
       headers   = {'Content-Type' => 'text/html', 'Location' => url.to_s}
 
       [301, headers, []]
